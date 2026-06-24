@@ -1,0 +1,8 @@
+inspect-ai>=0.3.241
+inspect-evals
+openai>=1.0       # OpenRouter is OpenAI-compatible; Inspect's openrouter/ provider uses it
+pandas>=2.0
+numpy>=2.0         # MRSW rank confidence sets (mrsw.py); no scipy needed
+python-dotenv
+pyyaml
+matplotlib>=3.8       # paper figures (make_paper_assets.py)

@@ -1,0 +1,84 @@
+# ============================================================================
+# Model roster — all served through OpenRouter (one OPENROUTER_API_KEY)
+# ============================================================================
+# run_ranking.py runs every entry in `run_models` that is `verified: true` and
+# whose `key_env` (OPENROUTER_API_KEY) is present in the environment. Flip a
+# model to `verified: false` to exclude it from the next run; flip it back on
+# to include it. One key enables the whole roster.
+#
+# Slugs are OpenRouter model ids (see https://openrouter.ai/models). They drift
+# over time — if a run 400s on a model, check the current slug there.
+#
+# Note on `openrouter/deepseek/deepseek-chat`: on OpenRouter this slug resolves
+# to DeepSeek V3 (the figures/tables label it `deepseek-v3`). This is distinct
+# from the DeepSeek *official* API, whose `deepseek-chat` now points to a newer
+# model — they are not the same endpoint.
+# ============================================================================
+
+run_models:
+  # ---- Mid / upper tier ----
+  - leaderboard_name: "DeepSeek-V3 (via OpenRouter)"
+    inspect_model_id: "openrouter/deepseek/deepseek-chat"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Qwen3-14B"
+    inspect_model_id: "openrouter/qwen/qwen3-14b"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Qwen3-30B-A3B"
+    inspect_model_id: "openrouter/qwen/qwen3-30b-a3b-instruct-2507"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Qwen3-8B"
+    inspect_model_id: "openrouter/qwen/qwen3-8b"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "GLM-4.7-Flash"
+    inspect_model_id: "openrouter/z-ai/glm-4.7-flash"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Llama-3.3-70B-Instruct"
+    inspect_model_id: "openrouter/meta-llama/llama-3.3-70b-instruct"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Mistral-Small-3.2-24B"
+    inspect_model_id: "openrouter/mistralai/mistral-small-3.2-24b-instruct"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+
+  # ---- Small / weak tier (fills the bottom → richer rank-set spread) ----
+  - leaderboard_name: "Phi-4"
+    inspect_model_id: "openrouter/microsoft/phi-4"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Gemma-3-12B"
+    inspect_model_id: "openrouter/google/gemma-3-12b-it"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Qwen2.5-7B-Instruct"
+    inspect_model_id: "openrouter/qwen/qwen-2.5-7b-instruct"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Gemma-3-4B"
+    inspect_model_id: "openrouter/google/gemma-3-4b-it"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Llama-3.1-8B-Instruct"
+    inspect_model_id: "openrouter/meta-llama/llama-3.1-8b-instruct"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+  - leaderboard_name: "Llama-3.2-3B-Instruct"
+    inspect_model_id: "openrouter/meta-llama/llama-3.2-3b-instruct"
+    key_env: OPENROUTER_API_KEY
+    verified: true
+
+  # ---- Optional extras (disabled: reasoning-heavy / slower / pricier) ----
+  # Flip to verified: true to include them on the next run.
+  - leaderboard_name: "Kimi K2 (Moonshot)"
+    inspect_model_id: "openrouter/moonshotai/kimi-k2"
+    key_env: OPENROUTER_API_KEY
+    verified: false
+  - leaderboard_name: "GLM-4.5-Air (Zhipu)"
+    inspect_model_id: "openrouter/z-ai/glm-4.5-air"
+    key_env: OPENROUTER_API_KEY
+    verified: false

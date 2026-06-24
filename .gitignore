@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+outputs/logs/
+.inspect/
+*.eval
+
+# regenerated analysis artifacts (scripts kept, products not committed)
+outputs/method_comparison.md
+outputs/tau_sets.md

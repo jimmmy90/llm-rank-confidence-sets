@@ -1,0 +1,22 @@
+[project]
+name = "llm-rank-confidence-sets"
+version = "0.1.0"
+description = "LLM benchmark ranking with MRSW rank confidence sets, built on Inspect"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Z.Lin" }]
+dependencies = [
+    "inspect-ai>=0.3.241",
+    "inspect-evals",
+    "openai>=1.0",
+    "pandas>=2.0",
+    "numpy>=2.0",
+    "python-dotenv",
+    "pyyaml",
+    "matplotlib>=3.8",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
