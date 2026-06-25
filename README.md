@@ -1,9 +1,10 @@
 # LLM ranking with statistically valid rank confidence sets
 
-Rank a set of LLMs on a benchmark and report **how uncertain each rank actually
-is** — not just a point ranking. Built on AISI's
-[Inspect](https://inspect.aisi.org.uk) for evaluation, with rank confidence sets
-computed via the **Mogstad–Romano–Shaikh–Wilhelm (MRSW)** procedure.
+Rank a set of LLMs on a benchmark and report **how uncertain each rank actually is** — not just a point ranking. 
+Built on AISI's [Inspect](https://inspect.aisi.org.uk) for evaluation, with rank confidence 
+sets computed using the inference-for-ranks method of **Mogstad et al. (2024)**.
+In the rest of this note, I use MRSW procedure as a convenient shorthand for this rank-inference approach.
+
 
 The point of the project: a leaderboard that says "model A is rank 1, model B is
 rank 2" hides the fact that, on a finite set of questions, that ordering is a
